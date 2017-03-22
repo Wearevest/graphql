@@ -4,7 +4,7 @@ import (
 	"github.com/graphql-go/graphql/gqlerrors"
 	"github.com/graphql-go/graphql/language/parser"
 	"github.com/graphql-go/graphql/language/source"
-	"golang.org/x/net/context"
+	"context"
 )
 
 type Params struct {
