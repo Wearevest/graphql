@@ -8,7 +8,7 @@ import (
 
 	"github.com/wearevest/graphql/gqlerrors"
 	"github.com/wearevest/graphql/language/ast"
-	"golang.org/x/net/context"
+	"context"
 )
 
 type ExecuteParams struct {

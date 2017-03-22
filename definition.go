@@ -6,7 +6,7 @@ import (
 	"regexp"
 
 	"github.com/wearevest/graphql/language/ast"
-	"golang.org/x/net/context"
+	"context"
 )
 
 // Type interface for all of the possible kinds of GraphQL types

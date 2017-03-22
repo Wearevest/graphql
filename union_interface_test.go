@@ -6,7 +6,7 @@ import (
 
 	"github.com/wearevest/graphql"
 	"github.com/wearevest/graphql/testutil"
-	"golang.org/x/net/context"
+	"context"
 )
 
 type testNamedType interface {
