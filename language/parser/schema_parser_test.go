@@ -4,10 +4,10 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/graphql-go/graphql/gqlerrors"
-	"github.com/graphql-go/graphql/language/ast"
-	"github.com/graphql-go/graphql/language/location"
-	"github.com/graphql-go/graphql/language/source"
+	"github.com/wearevest/graphql/gqlerrors"
+	"github.com/wearevest/graphql/language/ast"
+	"github.com/wearevest/graphql/language/location"
+	"github.com/wearevest/graphql/language/source"
 )
 
 func parse(t *testing.T, query string) *ast.Document {

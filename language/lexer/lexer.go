@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"unicode/utf8"
 
-	"github.com/graphql-go/graphql/gqlerrors"
-	"github.com/graphql-go/graphql/language/source"
+	"github.com/wearevest/graphql/gqlerrors"
+	"github.com/wearevest/graphql/language/source"
 )
 
 const (

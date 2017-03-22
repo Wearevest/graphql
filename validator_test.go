@@ -4,13 +4,13 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/graphql-go/graphql"
-	"github.com/graphql-go/graphql/gqlerrors"
-	"github.com/graphql-go/graphql/language/ast"
-	"github.com/graphql-go/graphql/language/location"
-	"github.com/graphql-go/graphql/language/parser"
-	"github.com/graphql-go/graphql/language/source"
-	"github.com/graphql-go/graphql/testutil"
+	"github.com/wearevest/graphql"
+	"github.com/wearevest/graphql/gqlerrors"
+	"github.com/wearevest/graphql/language/ast"
+	"github.com/wearevest/graphql/language/location"
+	"github.com/wearevest/graphql/language/parser"
+	"github.com/wearevest/graphql/language/source"
+	"github.com/wearevest/graphql/testutil"
 )
 
 func expectValid(t *testing.T, schema *graphql.Schema, queryString string) {

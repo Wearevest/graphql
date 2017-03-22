@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/graphql-go/graphql"
-	"github.com/graphql-go/graphql/gqlerrors"
-	"github.com/graphql-go/graphql/language/location"
-	"github.com/graphql-go/graphql/testutil"
+	"github.com/wearevest/graphql"
+	"github.com/wearevest/graphql/gqlerrors"
+	"github.com/wearevest/graphql/language/location"
+	"github.com/wearevest/graphql/testutil"
 	"golang.org/x/net/context"
 )
 

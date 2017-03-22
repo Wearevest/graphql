@@ -6,8 +6,8 @@ import (
 
 	"encoding/json"
 
-	"github.com/graphql-go/graphql"
-	"github.com/graphql-go/graphql/testutil"
+	"github.com/wearevest/graphql"
+	"github.com/wearevest/graphql/testutil"
 )
 
 func main() {
