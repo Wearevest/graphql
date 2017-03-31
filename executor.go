@@ -6,9 +6,9 @@ import (
 	"reflect"
 	"strings"
 
+	"context"
 	"github.com/wearevest/graphql/gqlerrors"
 	"github.com/wearevest/graphql/language/ast"
-	"context"
 )
 
 type ExecuteParams struct {

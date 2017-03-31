@@ -6,10 +6,10 @@ import (
 	"strconv"
 	"testing"
 
+	"github.com/kr/pretty"
 	"github.com/wearevest/graphql"
 	"github.com/wearevest/graphql/language/ast"
 	"github.com/wearevest/graphql/language/parser"
-	"github.com/kr/pretty"
 )
 
 var (

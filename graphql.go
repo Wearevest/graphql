@@ -1,10 +1,10 @@
 package graphql
 
 import (
+	"context"
 	"github.com/wearevest/graphql/gqlerrors"
 	"github.com/wearevest/graphql/language/parser"
 	"github.com/wearevest/graphql/language/source"
-	"context"
 )
 
 type Params struct {

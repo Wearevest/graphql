@@ -8,11 +8,11 @@ import (
 	"testing"
 	"time"
 
+	"context"
 	"github.com/wearevest/graphql"
 	"github.com/wearevest/graphql/gqlerrors"
 	"github.com/wearevest/graphql/language/location"
 	"github.com/wearevest/graphql/testutil"
-	"context"
 )
 
 func TestExecutesArbitraryCode(t *testing.T) {

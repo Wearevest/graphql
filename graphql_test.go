@@ -4,9 +4,9 @@ import (
 	"reflect"
 	"testing"
 
+	"context"
 	"github.com/wearevest/graphql"
 	"github.com/wearevest/graphql/testutil"
-	"context"
 )
 
 type T struct {

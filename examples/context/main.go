@@ -6,8 +6,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/wearevest/graphql"
 	"context"
+	"github.com/wearevest/graphql"
 )
 
 var Schema graphql.Schema
