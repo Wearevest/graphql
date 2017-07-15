@@ -64,7 +64,7 @@ var rootMutation = graphql.NewObject(graphql.ObjectConfig{
 		*/
 		"createTodo": &graphql.Field{
 			Type:        todoType, // the return type for this field
-			Description: "Create new todo",
+			Description: "Upsert new todo",
 			Args: graphql.FieldConfigArgument{
 				"text": &graphql.ArgumentConfig{
 					Type: graphql.NewNonNull(graphql.String),
@@ -216,7 +216,7 @@ func main() {
 	// Display some basic instructions
 	fmt.Println("Now server is running on port 8080")
 	fmt.Println("Get single todo: curl -g 'http://localhost:8080/graphql?query={todo(id:\"b\"){id,text,done}}'")
-	fmt.Println("Create new todo: curl -g 'http://localhost:8080/graphql?query=mutation+_{createTodo(text:\"My+new+todo\"){id,text,done}}'")
+	fmt.Println("Upsert new todo: curl -g 'http://localhost:8080/graphql?query=mutation+_{createTodo(text:\"My+new+todo\"){id,text,done}}'")
 	fmt.Println("Update todo: curl -g 'http://localhost:8080/graphql?query=mutation+_{updateTodo(id:\"a\",done:true){id,text,done}}'")
 	fmt.Println("Load todo list: curl -g 'http://localhost:8080/graphql?query={todoList{id,text,done}}'")
 	fmt.Println("Access the web app via browser at 'http://localhost:8080'")
