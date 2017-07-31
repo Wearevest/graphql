@@ -1,12 +1,12 @@
 package graphql
 
 import (
+	"context"
 	"fmt"
 	"reflect"
 	"regexp"
 
-	"context"
-	"github.com/wearevest/graphql/language/ast"
+	"github.com/graphql-go/graphql/language/ast"
 )
 
 // Type interface for all of the possible kinds of GraphQL types
@@ -988,17 +988,27 @@ func (gt *Enum) Values() []*EnumValueDefinition {
 	return gt.values
 }
 func (gt *Enum) Serialize(value interface{}) interface{} {
-	if enumValue, ok := gt.getValueLookup()[value]; ok {
+	v := value
+	if reflect.ValueOf(v).Kind() == reflect.Ptr {
+		v = reflect.Indirect(reflect.ValueOf(v)).Interface()
+	}
+	if enumValue, ok := gt.getValueLookup()[v]; ok {
 		return enumValue.Name
 	}
 	return nil
 }
 func (gt *Enum) ParseValue(value interface{}) interface{} {
-	valueStr, ok := value.(string)
-	if !ok {
+	var v string
+
+	switch value := value.(type) {
+	case string:
+		v = value
+	case *string:
+		v = *value
+	default:
 		return nil
 	}
-	if enumValue, ok := gt.getNameLookup()[valueStr]; ok {
+	if enumValue, ok := gt.getNameLookup()[v]; ok {
 		return enumValue.Value
 	}
 	return nil

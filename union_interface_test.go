@@ -1,12 +1,12 @@
 package graphql_test
 
 import (
+	"context"
 	"reflect"
 	"testing"
 
-	"context"
-	"github.com/wearevest/graphql"
-	"github.com/wearevest/graphql/testutil"
+	"github.com/graphql-go/graphql"
+	"github.com/graphql-go/graphql/testutil"
 )
 
 type testNamedType interface {

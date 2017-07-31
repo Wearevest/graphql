@@ -1,12 +1,12 @@
 package graphql_test
 
 import (
+	"context"
 	"reflect"
 	"testing"
 
-	"context"
-	"github.com/wearevest/graphql"
-	"github.com/wearevest/graphql/testutil"
+	"github.com/graphql-go/graphql"
+	"github.com/graphql-go/graphql/testutil"
 )
 
 type T struct {
@@ -170,4 +170,31 @@ func TestThreadsContextFromParamsThrough(t *testing.T) {
 		t.Fatalf("wrong result, query: %v, graphql result diff: %v", query, testutil.Diff(expected, result))
 	}
 
+}
+
+func TestNewErrorChecksNilNodes(t *testing.T) {
+	schema, err := graphql.NewSchema(graphql.SchemaConfig{
+		Query: graphql.NewObject(graphql.ObjectConfig{
+			Name: "Query",
+			Fields: graphql.Fields{
+				"graphql_is": &graphql.Field{
+					Type: graphql.String,
+					Resolve: func(p graphql.ResolveParams) (interface{}, error) {
+						return "", nil
+					},
+				},
+			},
+		}),
+	})
+	if err != nil {
+		t.Fatalf("unexpected errors: %v", err.Error())
+	}
+	query := `{graphql_is:great(sort:ByPopularity)}{stars}`
+	result := graphql.Do(graphql.Params{
+		Schema:        schema,
+		RequestString: query,
+	})
+	if len(result.Errors) == 0 {
+		t.Fatalf("expected errors, got: %v", result)
+	}
 }

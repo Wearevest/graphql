@@ -2,14 +2,14 @@ package testutil
 
 import (
 	"encoding/json"
+	"fmt"
 	"reflect"
 	"strconv"
 	"testing"
 
-	"github.com/kr/pretty"
-	"github.com/wearevest/graphql"
-	"github.com/wearevest/graphql/language/ast"
-	"github.com/wearevest/graphql/language/parser"
+	"github.com/graphql-go/graphql"
+	"github.com/graphql-go/graphql/language/ast"
+	"github.com/graphql-go/graphql/language/parser"
 )
 
 var (
@@ -360,8 +360,8 @@ func TestExecute(t *testing.T, ep graphql.ExecuteParams) *graphql.Result {
 	return graphql.Execute(ep)
 }
 
-func Diff(a, b interface{}) []string {
-	return pretty.Diff(a, b)
+func Diff(want, got interface{}) []string {
+	return []string{fmt.Sprintf("\ngot: %v", got), fmt.Sprintf("\nwant: %v\n", want)}
 }
 
 func ASTToJSON(t *testing.T, a ast.Node) interface{} {
